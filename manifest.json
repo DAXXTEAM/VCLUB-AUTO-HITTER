@@ -1,0 +1,64 @@
+{
+  "manifest_version": 3,
+  "name": "𝖵𝖢𝗅𝗎𝖻 - 𝖳𝖾𝖼𝗁 𝖠𝗎𝗍𝗈 𝖢𝗈 𝖧𝗂𝗍𝗍𝖾𝗋 ✨",
+  "version": "1.0.0",
+  "description": "𝖤𝗇𝗁𝖺𝗇𝖼𝖾𝗌 𝖼𝗁𝖾𝖼𝗄𝗈𝗎𝗍 𝖾𝗑𝗉𝖾𝗋𝗂𝖾𝗇𝖼𝖾 𝗐𝗂𝗍𝗁 𝖺𝗎𝗍𝗈𝗆𝖺𝗍𝖾𝖽 𝗋𝖾𝗍𝗋𝗂𝖾𝗌 𝖺𝗇𝖽 𝗋𝖾𝖺𝗅-𝗍𝗂𝗆𝖾 𝗇𝗈𝗍𝗂𝖿𝗂𝖼𝖺𝗍𝗂𝗈𝗇𝗌 𝖿𝗈𝗋 𝗉𝖺𝗒𝗆𝖾𝗇𝗍 𝗉𝗋𝗈𝖼𝖾𝗌𝗌𝗂𝗇𝗀",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "debugger",
+    "tabs",
+    "storage",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess"
+  ],
+  "host_permissions": [
+    "*://*/*", 
+    "*://*.stripe.com/*",
+    "*://checkout.stripe.com/*",
+    "*://buy.stripe.com/*",
+    "*://billing.stripe.com/*",
+    "*://invoice.stripe.com/*",
+    "*://api.stripe.com/*",
+    "https://api.telegram.org/*"
+  ],
+  "background": {
+    "service_worker": "scripts/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*",
+        "https://checkout.stripe.com/*",
+        "https://buy.stripe.com/*",
+        "https://billing.stripe.com/*",
+        "https://invoice.stripe.com/*",
+        "https://api.stripe.com/*",
+        "*://*.stripe.com/*"
+      ],
+      "js": ["scripts/content.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "type": "module"
+    }
+  ],
+  "action": {
+    "default_title": "𝖵𝖢𝗅𝗎𝖻 - 𝖳𝖾𝖼𝗁 𝖠𝗎𝗍𝗈 𝖢𝗈 𝖧𝗂𝗍𝗍𝖾𝗋"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["daxx.png"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}

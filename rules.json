@@ -1,0 +1,224 @@
+[
+    {
+      "id": 1,
+      "priority": 1,
+      "action": {
+        "type": "redirect",
+        "redirect": {
+          "regexSubstitution": "https://nameless-voice-ce24.urmomisnowmine.workers.dev/?url=\\1"
+        }
+      },
+      "condition": {
+        "regexFilter": "(https://js.stripe.com/v3/fingerprinted/js/elements-inner-payment-[^.]+.js)",
+        "requestDomains": [
+          "js.stripe.com"
+        ],
+        "resourceTypes": [
+          "script"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "priority": 1,
+      "action": {
+        "type": "modifyHeaders",
+        "responseHeaders": [
+          {
+            "header": "Content-Security-Policy",
+            "operation": "set",
+            "value": "base-uri 'none'; connect-src 'self' https://api.stripe.com https://errors.stripe.com https://r.stripe.com https://ppm.stripe.com; default-src 'self'; font-src data: https:; form-action 'none'; frame-src 'self' https://www.affirm.com https://checkout.link.com https://b.stripecdn.com; img-src 'self' https://q.stripe.com https://b.stripecdn.com https://js.stripe.com; media-src 'none'; object-src 'none'; script-src 'self' https://nameless-voice-ce24.urmomisnowmine.workers.dev; style-src 'self' 'unsafe-inline'; worker-src 'none'; report-uri https://q.stripe.com/csp-report"
+          }
+        ]
+      },
+      "condition": {
+        "urlFilter": "https://js.stripe.com/v3/elements-inner-payment-*.html",
+        "requestDomains": [
+          "js.stripe.com"
+        ],
+        "resourceTypes": [
+          "main_frame",
+          "sub_frame"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "priority": 1,
+      "action": {
+        "type": "redirect",
+        "redirect": {
+          "regexSubstitution": "https://nameless-voice-ce24.urmomisnowmine.workers.dev/?url=\\1"
+        }
+      },
+      "condition": {
+        "regexFilter": "(https://js.stripe.com/v3/fingerprinted/js/ui-shared-[^.]+.js)",
+        "requestDomains": [
+          "js.stripe.com"
+        ],
+        "resourceTypes": [
+          "script"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "priority": 1,
+      "action": {
+        "type": "modifyHeaders",
+        "responseHeaders": [
+          {
+            "header": "Content-Security-Policy",
+            "operation": "set",
+            "value": "base-uri 'none'; connect-src 'self' https://api.stripe.com https://errors.stripe.com https://r.stripe.com https://ppm.stripe.com; default-src 'self'; font-src data: https:; form-action 'none'; frame-src 'self' https://www.affirm.com https://checkout.link.com https://b.stripecdn.com; img-src 'self' https://q.stripe.com https://b.stripecdn.com https://js.stripe.com; media-src 'none'; object-src 'none'; script-src 'self' https://nameless-voice-ce24.urmomisnowmine.workers.dev; style-src 'self' 'unsafe-inline'; worker-src 'none'; report-uri https://q.stripe.com/csp-report"
+          }
+        ]
+      },
+      "condition": {
+        "urlFilter": "https://js.stripe.com/v3/elements-inner-card-*.html",
+        "requestDomains": [
+          "js.stripe.com"
+        ],
+        "resourceTypes": [
+          "main_frame",
+          "sub_frame"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "priority": 1,
+      "action": {
+        "type": "redirect",
+        "redirect": {
+          "regexSubstitution": "https://nameless-voice-ce24.urmomisnowmine.workers.dev/?url=\\1"
+        }
+      },
+      "condition": {
+        "regexFilter": "(https://js.stripe.com/v3/fingerprinted/js/checkout-app-init-[^.]+.js)",
+        "requestDomains": [
+          "js.stripe.com"
+        ],
+        "resourceTypes": [
+          "script"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "priority": 1,
+      "action": {
+        "type": "modifyHeaders",
+        "responseHeaders": [
+          {
+            "header": "Content-Security-Policy",
+            "operation": "set",
+            "value": "base-uri 'none'; connect-src 'self' https://api.stripe.com https://errors.stripe.com https://js.stripe.com https://r.stripe.com https://checkout-cookies.stripe.com https://stripe.com/cookie-settings/enforcement-mode https://merchant-ui-api.stripe.com; default-src 'self'; font-src 'self' https://js.stripe.com; form-action 'none'; frame-src 'self' https://js.stripe.com https://payments.stripe.com https://checkout.link.com; img-src 'self' https://q.stripe.com https://js.stripe.com https://stripe-camo.global.ssl.fastly.net https://d1wqzb5bdbcre6.cloudfront.net https://qr.stripe.com https://b.stripecdn.com https://files.stripe.com; media-src 'none'; object-src 'none'; script-src 'self' https://nameless-voice-ce24.urmomisnowmine.workers.dev https://js.stripe.com 'unsafe-inline'; style-src 'self' https://js.stripe.com 'unsafe-inline'; worker-src 'none'; report-uri https://q.stripe.com/csp-report"
+          }
+        ]
+      },
+      "condition": {
+        "urlFilter": "https://checkout.stripe.com/*",
+        "requestDomains": [
+          "checkout.stripe.com"
+        ],
+        "resourceTypes": [
+          "main_frame",
+          "sub_frame"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "priority": 1,
+      "action": {
+        "type": "modifyHeaders",
+        "responseHeaders": [
+          {
+            "header": "Content-Security-Policy",
+            "operation": "set",
+            "value": "base-uri 'none'; connect-src 'self' https://api.stripe.com https://errors.stripe.com https://js.stripe.com https://r.stripe.com https://checkout-cookies.stripe.com https://stripe.com/cookie-settings/enforcement-mode https://merchant-ui-api.stripe.com; default-src 'self'; font-src 'self' https://js.stripe.com; form-action 'none'; frame-src 'self' https://js.stripe.com https://payments.stripe.com https://checkout.link.com; img-src 'self' https://q.stripe.com https://js.stripe.com https://stripe-camo.global.ssl.fastly.net https://d1wqzb5bdbcre6.cloudfront.net https://qr.stripe.com https://b.stripecdn.com https://files.stripe.com; media-src 'none'; object-src 'none'; script-src 'self' https://nameless-voice-ce24.urmomisnowmine.workers.dev https://js.stripe.com 'unsafe-inline'; style-src 'self' https://js.stripe.com 'unsafe-inline'; worker-src 'none'; report-uri https://q.stripe.com/csp-report"
+          }
+        ]
+      },
+      "condition": {
+        "urlFilter": "https://billing.stripe.com/*",
+        "requestDomains": [
+          "billing.stripe.com"
+        ],
+        "resourceTypes": [
+          "main_frame",
+          "sub_frame"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "priority": 1,
+      "action": {
+        "type": "modifyHeaders",
+        "responseHeaders": [
+          {
+            "header": "Content-Security-Policy",
+            "operation": "set",
+            "value": "base-uri 'none'; connect-src 'self' https://api.stripe.com https://errors.stripe.com https://js.stripe.com https://r.stripe.com https://checkout-cookies.stripe.com https://stripe.com/cookie-settings/enforcement-mode https://merchant-ui-api.stripe.com; default-src 'self'; font-src 'self' https://js.stripe.com; form-action 'none'; frame-src 'self' https://js.stripe.com https://payments.stripe.com https://checkout.link.com; img-src 'self' https://q.stripe.com https://js.stripe.com https://stripe-camo.global.ssl.fastly.net https://d1wqzb5bdbcre6.cloudfront.net https://qr.stripe.com https://b.stripecdn.com https://files.stripe.com; media-src 'none'; object-src 'none'; script-src 'self' https://nameless-voice-ce24.urmomisnowmine.workers.dev https://js.stripe.com 'unsafe-inline'; style-src 'self' https://js.stripe.com 'unsafe-inline'; worker-src 'none'; report-uri https://q.stripe.com/csp-report"
+          }
+        ]
+      },
+      "condition": {
+        "urlFilter": "https://buy.stripe.com/*",
+        "requestDomains": [
+          "buy.stripe.com"
+        ],
+        "resourceTypes": [
+          "main_frame",
+          "sub_frame"
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "priority": 1,
+      "action": {
+        "type": "modifyHeaders",
+        "responseHeaders": [
+          {
+            "header": "Content-Security-Policy",
+            "operation": "set",
+            "value": "base-uri 'none'; connect-src 'self' https://api.stripe.com https://errors.stripe.com https://js.stripe.com https://r.stripe.com https://checkout-cookies.stripe.com https://stripe.com/cookie-settings/enforcement-mode https://merchant-ui-api.stripe.com; default-src 'self'; font-src 'self' https://js.stripe.com; form-action 'none'; frame-src 'self' https://js.stripe.com https://payments.stripe.com https://checkout.link.com; img-src 'self' https://q.stripe.com https://js.stripe.com https://stripe-camo.global.ssl.fastly.net https://d1wqzb5bdbcre6.cloudfront.net https://qr.stripe.com https://b.stripecdn.com https://files.stripe.com; media-src 'none'; object-src 'none'; script-src 'self' https://nameless-voice-ce24.urmomisnowmine.workers.dev https://js.stripe.com 'unsafe-inline'; style-src 'self' https://js.stripe.com 'unsafe-inline'; worker-src 'none'; report-uri https://q.stripe.com/csp-report"
+          }
+        ]
+      },
+      "condition": {
+        "urlFilter": "https://*/cs_live_*",
+        "resourceTypes": [
+          "main_frame",
+          "sub_frame"
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "priority": 1,
+      "action": {
+        "type": "modifyHeaders",
+        "responseHeaders": [
+          {
+            "header": "Content-Security-Policy",
+            "operation": "set",
+            "value": "base-uri 'none'; connect-src 'self' https://errors.stripe.com https://r.stripe.com; default-src 'self'; form-action 'none'; frame-src 'self' https://b.stripecdn.com; img-src 'self' https://q.stripe.com; object-src 'none'; script-src 'self' https://nameless-voice-ce24.urmomisnowmine.workers.dev; style-src 'self'; worker-src 'none'; report-uri https://q.stripe.com/csp-report"
+          }
+        ]
+      },
+      "condition": {
+        "urlFilter": "https://js.stripe.com/v3/hcaptcha-inner-*.html",
+        "requestDomains": [
+          "js.stripe.com"
+        ],
+        "resourceTypes": [
+          "main_frame",
+          "sub_frame"
+        ]
+      }
+    }
+  ]
